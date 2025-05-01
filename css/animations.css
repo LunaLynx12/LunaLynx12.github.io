@@ -1,0 +1,298 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: inset(40% 0 61% 0);
+    transform: translate(-5px);
+  }
+  20% {
+    clip-path: inset(92% 0 1% 0);
+    transform: translate(5px);
+  }
+  40% {
+    clip-path: inset(43% 0 1% 0);
+    transform: translate(-5px);
+  }
+  60% {
+    clip-path: inset(25% 0 58% 0);
+    transform: translate(5px);
+  }
+  80% {
+    clip-path: inset(54% 0 7% 0);
+    transform: translate(-5px);
+  }
+  100% {
+    clip-path: inset(58% 0 43% 0);
+    transform: translate(0);
+  }
+}
+
+/* Transition classes for sections */
+.section-transition {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-transition.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation for terminal typing */
+.command.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  animation: typing 1s steps(40, end);
+}
+
+.output.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  animation: typing 1.5s steps(40, end);
+}
+
+/* Animated border */
+.animated-border {
+  position: relative;
+}
+
+.animated-border::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--color-accent-blue), transparent);
+  animation: borderGlow 2s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Skill bar animation */
+.skill-progress.animate {
+  width: 0 !important;
+  transition: width 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Glitch text effect */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -1px 0 #e63946;
+  animation: glitch 0.3s infinite;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: 2px 0 #4361ee;
+  animation: glitch 0.3s infinite reverse;
+}
+
+/* Button hover animation */
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-animated::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.6s;
+}
+
+.btn-animated:hover::before {
+  left: 100%;
+}
+
+/* Floating animation for cards */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Reveal animation for text */
+.reveal-text {
+  position: relative;
+  color: transparent;
+}
+
+.reveal-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--color-text-primary);
+  overflow: hidden;
+  white-space: nowrap;
+  animation: revealText 2s forwards;
+}
+
+@keyframes revealText {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Matrix-like falling characters animation */
+.matrix-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+.matrix-character {
+  position: absolute;
+  font-family: var(--font-code);
+  color: var(--color-accent-green);
+  font-size: 14px;
+  animation: matrixFall linear infinite;
+}
+
+@keyframes matrixFall {
+  from {
+    transform: translateY(-100px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(calc(100vh + 100px));
+    opacity: 0;
+  }
+}
+
+/* Ripple effect on click */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}

@@ -1,10 +1,283 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>My Website</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petre Radu Cătălin | Cybersecurity Professional</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to my GitHub Pages website.</p>
+    <div class="noise-overlay"></div>
+    <div class="particles-container" id="particles-js"></div>
+    
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <span class="logo-text">Petre Radu Cătălin</span>
+        </div>
+        <nav class="nav-desktop">
+          <ul class="nav-links">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+      <ul class="mobile-nav-links">
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="terminal">
+              <div class="terminal-header">
+                <div class="terminal-buttons">
+                  <span class="terminal-button close"></span>
+                  <span class="terminal-button minimize"></span>
+                  <span class="terminal-button maximize"></span>
+                </div>
+                <div class="terminal-title">terminal ~ cybersec</div>
+              </div>
+              <div class="terminal-body">
+                <div class="line">
+                  <span class="prompt">$</span>
+                  <span class="command" id="command-1">whoami</span>
+                </div>
+                <div class="line">
+                  <span class="output" id="output-1">Petre Radu Cătălin</span>
+                </div>
+                <div class="line">
+                  <span class="prompt">$</span>
+                  <span class="command" id="command-2">cat skills.txt</span>
+                </div>
+                <div class="line">
+                  <span class="output" id="output-2">Red Teamer | Penetration Tester | CTF Player | Bug Bounty Enthusiast</span>
+                </div>
+                <div class="line">
+                  <span class="prompt">$</span>
+                  <span class="command" id="command-3">./start_mission.sh</span>
+                </div>
+                <div class="line">
+                  <span class="output" id="output-3">Mission started. Scroll down to learn more...</span>
+                </div>
+                <div class="line">
+                  <span class="prompt">$</span>
+                  <span class="command current-line" id="current-command"><span class="cursor">|</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <p>Scroll down</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">About</h2>
+          </div>
+          <div class="about-content">
+            <div class="about-text">
+              <p>I'm <span class="highlight">Petre Radu Cătălin</span>, a cybersecurity student specializing in red teaming and penetration testing. I work on Hack The Box, TryHackMe, and LetsDefend, focusing on Linux, Windows, web apps, APIs, and Active Directory.</p>
+              <p>With a deep understanding of attack vectors and security protocols, I participate regularly in CTF competitions and bug bounty programs to sharpen my skills and contribute to a safer digital environment.</p>
+              <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Contact Me</a>
+                <a href="#projects" class="btn btn-secondary">View Projects</a>
+              </div>
+            </div>
+            <div class="about-stats">
+              <div class="stat-card">
+                <div class="stat-icon"><span class="icon-trophy"></span></div>
+                <div class="stat-number">15+</div>
+                <div class="stat-label">CTF Competitions</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon"><span class="icon-bug"></span></div>
+                <div class="stat-number">30+</div>
+                <div class="stat-label">Bugs Found</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon"><span class="icon-certificate"></span></div>
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Certifications</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills" id="skills">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Skills</h2>
+          </div>
+          <div class="skills-content">
+            <div class="skill-category">
+              <h3 class="category-title">Penetration Testing</h3>
+              <div class="skill-bars">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Network Penetration</span>
+                    <span class="skill-percentage">90%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Web Application Testing</span>
+                    <span class="skill-percentage">85%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Mobile Application Testing</span>
+                    <span class="skill-percentage">75%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 75%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="skill-category">
+              <h3 class="category-title">Tools & Technologies</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Metasploit</span>
+                <span class="skill-tag">Burp Suite</span>
+                <span class="skill-tag">Wireshark</span>
+                <span class="skill-tag">Nmap</span>
+                <span class="skill-tag">OWASP ZAP</span>
+                <span class="skill-tag">Kali Linux</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Bash</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Git</span>
+              </div>
+            </div>
+            
+            <div class="skill-category">
+              <h3 class="category-title">Areas of Expertise</h3>
+              <div class="expertise-grid">
+                <div class="expertise-item">
+                  <div class="expertise-icon"><span class="icon-network"></span></div>
+                  <h4>Network Security</h4>
+                  <p>Analyzing network traffic, identifying vulnerabilities in network infrastructure</p>
+                </div>
+                <div class="expertise-item">
+                  <div class="expertise-icon"><span class="icon-web"></span></div>
+                  <h4>Web Security</h4>
+                  <p>OWASP Top 10, XSS, CSRF, SQL injection, authentication flaws</p>
+                </div>
+                <div class="expertise-item">
+                  <div class="expertise-icon"><span class="icon-lock"></span></div>
+                  <h4>Cryptography</h4>
+                  <p>Understanding encryption protocols, identifying implementation flaws</p>
+                </div>
+                <div class="expertise-item">
+                  <div class="expertise-icon"><span class="icon-code"></span></div>
+                  <h4>Reverse Engineering</h4>
+                  <p>Binary analysis, identifying vulnerabilities in applications</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects" id="projects">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Projects</h2>
+          </div>
+          <div class="projects-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ctf">CTF</button>
+            <button class="filter-btn" data-filter="bugbounty">Bug Bounty</button>
+            <button class="filter-btn" data-filter="research">Research</button>
+          </div>
+          <div class="projects-grid" id="projects-grid">
+            <!-- Projects will be dynamically populated here -->
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Contact</h2>
+            <p>Interested in collaborating on cybersecurity projects, need consultation, or just want to connect? Feel free to reach out!</p>
+          </div>
+          <div class="contact-content">
+            <div class="contact-info">
+              
+              <div class="contact-details">
+                <div class="contact-item">
+                  <span class="contact-icon"><span class="icon-email"></span></span>
+                  <span class="contact-text">petrecatalin702@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-icon"><span class="icon-github"></span></span>
+                  <span class="contact-text">github.com/LunaLynx12</span>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-icon"><span class="icon-linkedin"></span></span>
+                  <span class="contact-text">linkedin.com/in/petreradu</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <span class="logo-text"></span>
+          </div>
+          <div class="footer-copyright">
+            <p>&copy; 2025 Petre Radu Cătălin. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/terminal.js"></script>
+    <script type="module" src="./js/animations.js"></script>
+    <script type="module" src="./js/projects.js"></script>
+    <script type="module" src="./js/navigation.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   </body>
 </html>
