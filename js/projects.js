@@ -10,66 +10,66 @@ document.addEventListener('DOMContentLoaded', () => {
 const projectsData = [
   {
     id: 1,
-    title: 'Web App Vulnerability Scanner',
-    description: 'Developed a custom scanner for detecting OWASP Top 10 vulnerabilities in web applications using Python and Selenium.',
-    image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    title: 'Signature-stealer Toolkit',
+    description: 'A Python-based toolkit for analyzing and modifying Portable Executable (PE) files, designed for red teaming and security research purposes.',
+    image: 'https://github.com/LunaLynx12/Signature-stealer/blob/dev/images/sample.png?raw=true',
     category: 'research',
     links: [
-      { text: 'Details', url: '#' },
-      { text: 'GitHub', url: '#' }
+      { text: 'Details', url: 'https://github.com/LunaLynx12/Signature-stealer/blob/dev/README.md' },
+      { text: 'GitHub', url: 'https://github.com/LunaLynx12/Signature-stealer' }
     ]
   },
   {
     id: 2,
-    title: 'CTF Challenge: Binary Exploitation',
-    description: 'First place in the 2024 HackerCTF competition by solving a complex buffer overflow vulnerability in a C++ application.',
-    image: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    title: 'CTF Challenge: Hackfinity Battle',
+    description: "🏆 Team Rank: 44 out of 4316<br>⚔️ Points Earned: 1665<br>✅ Tasks Completed: 44",
+    image: 'https://media.discordapp.net/attachments/913676794622783489/1367564166650531840/image.png?ex=68150ae1&is=6813b961&hm=2e76bf4ab83a757f2af5f59565c92373369c37b4ec9edf7d41c2e593c5471416&=&format=webp&quality=lossless',
     category: 'ctf',
     links: [
-      { text: 'Write-up', url: '#' }
+      { text: 'Write-up', url: '#projects' }
     ]
   },
   {
     id: 3,
-    title: 'SQL Injection in E-commerce Platform',
-    description: 'Discovered and responsibly disclosed a critical SQL injection vulnerability in a major e-commerce platform.',
-    image: 'https://images.pexels.com/photos/6804581/pexels-photo-6804581.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    category: 'bugbounty',
+    title: 'MalwarePeek - PE File Analyzer with Advanced Malware Detection',
+    description: 'A powerful Python tool for analyzing Portable Executable (PE) files with advanced malware detection capabilities, beautiful HTML reporting, and batch processing.',
+    image: 'https://github.com/LunaLynx12/MalwarePeek/blob/dev/images/sample.png?raw=true',
+    category: 'research',
     links: [
-      { text: 'Case Study', url: '#' },
-      { text: 'CVE', url: '#' }
+      { text: 'Details', url: 'https://github.com/LunaLynx12/MalwarePeek/blob/dev/README.md' },
+      { text: 'GitHub', url: 'https://github.com/LunaLynx12/MalwarePeek' }
     ]
   },
   {
     id: 4,
-    title: 'API Security Assessment Tool',
-    description: 'Created an automated tool for scanning and testing REST APIs for common security vulnerabilities and misconfigurations.',
-    image: 'https://images.pexels.com/photos/4670216/pexels-photo-4670216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    title: 'Apkocalypse - APK Injection Framework',
+    description: 'Created an modular toolkit for injecting payloads into Android applications while maintaining original functionality.',
+    image: 'https://media.discordapp.net/attachments/913676794622783489/1367559542069792788/assets2Ftask_01jt6fjzmqfpsvc46b944rxrf52F1746121968_img_0.png?ex=68150692&is=6813b512&hm=4b76f7b678a903ffeff38db81a93a12446f1ae4d6eb8f6989bad3a557c63317b&=&format=webp&quality=lossless&width=561&height=842',
     category: 'research',
     links: [
-      { text: 'Project', url: '#' },
-      { text: 'Demo', url: '#' }
+      { text: 'Details', url: 'https://github.com/LunaLynx12/Apkocalypse/blob/dev/README.md' },
+      { text: 'GitHub', url: 'https://github.com/LunaLynx12/Apkocalypse' }
     ]
   },
   {
     id: 5,
-    title: 'DNS Rebinding Attack Demo',
-    description: 'Developed a demonstration of DNS rebinding attacks to highlight the potential risks to internal networks and IoT devices.',
-    image: 'https://images.pexels.com/photos/5474285/pexels-photo-5474285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    title: 'CTF Challenge: Cyber Apocalypse',
+    description: '🏆 Team Rank: 122 out of 8130<br>⚔️ Points Earned: 48200<br>✅ Tasks Completed: 68 out of 77',
+    image: 'https://media.discordapp.net/attachments/913676794622783489/1367564555059728476/image.png?ex=68150b3e&is=6813b9be&hm=baf940c8ba56e779ee91d4eee5324ea8856de64d78905232f01bdd63677dd76e&=&format=webp&quality=lossless',
     category: 'ctf',
     links: [
-      { text: 'Presentation', url: '#' },
-      { text: 'Code', url: '#' }
+      { text: 'Write-up', url: '#projects' }
     ]
   },
   {
     id: 6,
-    title: 'XSS in Social Media Platform',
-    description: 'Identified and reported a stored XSS vulnerability in a major social media platform, awarded a substantial bug bounty.',
-    image: 'https://images.pexels.com/photos/5380590/pexels-photo-5380590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    title: 'Procmon DLL Hijacking Analyzer',
+    description: 'This tool is designed to help identify potential DLL hijacking vulnerabilities in applications by monitoring processes using Procmon (Process Monitor).',
+    image: 'https://media.discordapp.net/attachments/913676794622783489/1367562127635648603/assets2Ftask_01jt6g72zbf8psapbrwx035nwk2F1746122606_img_0.png?ex=681508fb&is=6813b77b&hm=9acc8a70acad4533be32d42cd51904c4f560a086212df34aa37b0156d17ddab4&=&format=webp&quality=lossless&width=561&height=842',
     category: 'bugbounty',
     links: [
-      { text: 'Report', url: '#' }
+      { text: 'Details', url: 'https://github.com/LunaLynx12/Procmon-DLL-Hijacking-Analyzer/blob/dev/README.md' },
+      { text: 'Github', url: 'https://github.com/LunaLynx12/Procmon-DLL-Hijacking-Analyzer' }
     ]
   }
 ];
