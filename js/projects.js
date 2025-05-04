@@ -71,6 +71,27 @@ const projectsData = [
       { text: 'Details', url: 'https://github.com/LunaLynx12/Procmon-DLL-Hijacking-Analyzer/blob/dev/README.md' },
       { text: 'Github', url: 'https://github.com/LunaLynx12/Procmon-DLL-Hijacking-Analyzer' }
     ]
+  },
+  {
+    id: 7,
+    title: 'CVE Radar Browser Extension',
+    description: "A lightweight browser extension that fetches and displays the latest CVEs from NVD with severity scores, persistent caching, and real-time updates while respecting API rate limits.",
+    image: 'https://github.com/LunaLynx12/NVD-quicklook/blob/main/images/sample.png?raw=true',
+    category: "research",
+    links: [
+      { 
+        text: "Details", 
+        url: "https://github.com/LunaLynx12/NVD-quicklook/blob/main/README.md" 
+      },
+      { 
+        text: "Github", 
+        url: "https://github.com/LunaLynx12/NVD-quicklook" 
+      },
+      { 
+        text: "Chrome Web Store", 
+        url: "#" 
+      }
+    ]
   }
 ];
 
