@@ -1,145 +1,143 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize terminal animation
   initTerminal();
 });
 
 function initTerminal() {
+  const terminalBody = document.querySelector('.terminal-body');
+
   const commands = [
-    document.getElementById('command-1'),
-    document.getElementById('command-2'),
-    document.getElementById('command-3')
+    { command: '$ whoami', output: 'luna@lynx:~$' },
+    { command: '$ cat banner.txt', output: 'Red Teamer | Penetration Tester | CTF Player | Bug Bounty Enthusiast' },
+    { command: '$ echo "Welcome to the terminal!"', output: 'Welcome to the terminal!' }
   ];
-  
-  const outputs = [
-    document.getElementById('output-1'),
-    document.getElementById('output-2'),
-    document.getElementById('output-3')
-  ];
-  
-  const currentCommand = document.getElementById('current-command');
-  
-  // Hide outputs initially
-  outputs.forEach(output => {
-    output.style.display = 'none';
+
+  const commandElements = [];
+  const outputElements = [];
+
+  for (const { command, output } of commands) {
+    const cmdEl = document.createElement('div');
+    cmdEl.className = 'terminal-command';
+    cmdEl.innerHTML = `<span class="prompt">$</span> ${command.slice(2)}`;
+    cmdEl.style.visibility = 'hidden';
+    terminalBody.appendChild(cmdEl);
+    commandElements.push(cmdEl);
+
+    const outEl = document.createElement('div');
+    outEl.className = 'terminal-output';
+    outEl.textContent = output;
+    outEl.style.display = 'none';
+    terminalBody.appendChild(outEl);
+    outputElements.push(outEl);
+  }
+
+  const currentLine = document.createElement('div');
+  currentLine.className = 'terminal-current';
+  terminalBody.appendChild(currentLine);
+
+  showCommandSequence(commandElements, outputElements, () => {
+    setTimeout(() => startRandomTyping(currentLine), 1000);
   });
-  
-  // Animation sequence
-  setTimeout(() => {
-    animateTyping(commands[0], () => {
-      setTimeout(() => {
-        outputs[0].style.display = 'inline-block';
-        outputs[0].classList.add('typing');
-        
-        setTimeout(() => {
-          animateTyping(commands[1], () => {
-            setTimeout(() => {
-              outputs[1].style.display = 'inline-block';
-              outputs[1].classList.add('typing');
-              
-              setTimeout(() => {
-                animateTyping(commands[2], () => {
-                  setTimeout(() => {
-                    outputs[2].style.display = 'inline-block';
-                    outputs[2].classList.add('typing');
-                    
-                    setTimeout(() => {
-                      // Start random typing after the sequence is done
-                      startRandomTyping(currentCommand);
-                    }, 1000);
-                  }, 300);
-                });
-              }, 1000);
-            }, 300);
-          });
-        }, 1000);
-      }, 300);
+}
+
+function showCommandSequence(commands, outputs, onComplete) {
+  let index = 0;
+
+  function next() {
+    if (index >= commands.length) {
+      onComplete?.();
+      return;
+    }
+
+    const cmd = commands[index];
+    const out = outputs[index];
+
+    animateTyping(cmd, () => {
+      showOutput(out);
+      index++;
+      setTimeout(next, 1000);
     });
-  }, 500);
+  }
+
+  next();
 }
 
 function animateTyping(element, callback) {
-  const text = element.textContent;
+  const fullText = element.textContent;
   element.textContent = '';
+  element.style.visibility = 'visible';
   element.classList.add('typing');
-  
+
   let i = 0;
-  const typeInterval = setInterval(() => {
-    if (i < text.length) {
-      element.textContent += text.charAt(i);
-      i++;
+  const interval = setInterval(() => {
+    if (i < fullText.length) {
+      element.textContent += fullText[i++];
     } else {
-      clearInterval(typeInterval);
-      if (callback) callback();
+      clearInterval(interval);
+      callback?.();
     }
-  }, 50);
+  }, 120);
 }
 
-function startRandomTyping(element) {
+function showOutput(element) {
+  element.style.display = 'block';
+  element.classList.add('fade-in');
+}
+
+function startRandomTyping(currentLine) {
   const commands = [
-    'ls -la',
-    'cd /home/hacker',
-    'sudo nmap -sS -p- target.com',
-    'hydra -l admin -P wordlist.txt target.com ssh',
-    'sqlmap -u "http://target.com/page.php?id=1" --dbs',
-    'dirb http://target.com/ /usr/share/wordlists/dirb/big.txt',
-    'python3 exploit.py',
-    'msfconsole',
-    'cat /etc/passwd',
-    'ssh root@target.com',
-    'gcc exploit.c -o exploit',
-    'nc -lvp 4444',
-    'curl -s https://target.com/api'
+    '$ ls -la',
+    '$ cd /home/hacker',
+    '$ sudo nmap -sS -p- target.com',
+    '$ hydra -l admin -P wordlist.txt target.com ssh',
+    '$ sqlmap -u "http://target.com/page.php?id=1" --dbs',
+    '$ dirb http://target.com/ /usr/share/wordlists/dirb/big.txt',
+    '$ python3 exploit.py',
+    '$ msfconsole',
+    '$ cat /etc/passwd',
+    '$ ssh root@target.com',
+    '$ gcc exploit.c -o exploit',
+    '$ nc -lvp 4444',
+    '$ curl -s https://target.com/api '
   ];
-  
+
   let currentIndex = 0;
   let isDeleting = false;
-  let txt = '';
-  let typeSpeed = 100;
-  let waitCount = 0;
-  const waitMax = 20;
-  
-  function tick() {
-    const command = commands[currentIndex];
-    
+  let currentText = '';
+  let delay = 120;
+  let waitCounter = 0;
+
+  function typeLoop() {
+    const fullCommand = commands[currentIndex];
+
     if (isDeleting) {
-      // Delete character
-      txt = txt.substring(0, txt.length - 1);
-      typeSpeed = 50;
+      currentText = currentText.slice(0, -1);
+      delay = 50;
     } else {
-      // Add character
-      txt = command.substring(0, txt.length + 1);
-      typeSpeed = 100;
+      currentText = fullCommand.slice(0, currentText.length + 1);
+      delay = 120;
     }
-    
-    // Update text content
-    element.innerHTML = txt + '<span class="cursor">|</span>';
-    
-    // If complete word
-    if (!isDeleting && txt === command) {
-      // Wait before starting to delete
-      isDeleting = true;
-      typeSpeed = 1000;
-      waitCount = 0;
-    // If deleted
-    } else if (isDeleting && txt === '') {
-      isDeleting = false;
-      typeSpeed = 500;
-      
-      // Move to next command
-      currentIndex = (currentIndex + 1) % commands.length;
-    }
-    
-    // If waiting
-    if (isDeleting && txt.length > 0 && txt === command) {
-      waitCount++;
-      if (waitCount < waitMax) {
-        setTimeout(tick, 100);
+
+    currentLine.className = 'terminal-command';
+    currentLine.innerHTML = `<span class="prompt">$</span> ${currentText.slice(2)}`;
+
+    if (!isDeleting && currentText === fullCommand) {
+      if (++waitCounter < 30) {
+        setTimeout(typeLoop, 100);
         return;
       }
+      isDeleting = true;
+      waitCounter = 0;
+      delay = 1000;
     }
-    
-    setTimeout(tick, typeSpeed);
+
+    if (isDeleting && currentText === '') {
+      isDeleting = false;
+      currentIndex = (currentIndex + 1) % commands.length;
+      delay = 500;
+    }
+
+    setTimeout(typeLoop, delay);
   }
-  
-  tick();
+
+  typeLoop();
 }

@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cybersecurity professional portfolio of Petre Radu Cătălin">
+    <meta property="og:title" content="Petre Radu Cătălin | Cybersecurity Professional">
+    <meta property="og:description" content="Red Teamer, Penetration Tester, and CTF Player">
+    <meta property="og:image" content="/images/thumbnail.png">
     <title>Petre Radu Cătălin | Cybersecurity Professional</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/components.css" />
     <link rel="stylesheet" href="./css/animations.css" />
-    <link rel="stylesheet" href="./css/responsive.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -60,31 +61,7 @@
                 <div class="terminal-title">terminal ~ cybersec</div>
               </div>
               <div class="terminal-body">
-                <div class="line">
-                  <span class="prompt">$</span>
-                  <span class="command" id="command-1">whoami</span>
-                </div>
-                <div class="line">
-                  <span class="output" id="output-1">Petre Radu Cătălin</span>
-                </div>
-                <div class="line">
-                  <span class="prompt">$</span>
-                  <span class="command" id="command-2">cat skills.txt</span>
-                </div>
-                <div class="line">
-                  <span class="output" id="output-2">Red Teamer | Penetration Tester | CTF Player | Bug Bounty Enthusiast</span>
-                </div>
-                <div class="line">
-                  <span class="prompt">$</span>
-                  <span class="command" id="command-3">./start_mission.sh</span>
-                </div>
-                <div class="line">
-                  <span class="output" id="output-3">Mission started. Scroll down to learn more...</span>
-                </div>
-                <div class="line">
-                  <span class="prompt">$</span>
-                  <span class="command current-line" id="current-command"><span class="cursor">|</span></span>
-                </div>
+                <!-- Terminal output will be dynamically populated by terminal.js -->
               </div>
             </div>
           </div>
@@ -102,18 +79,38 @@
           </div>
           <div class="about-content">
             <div class="about-text">
-              <p>I'm <span class="highlight">Petre Radu Cătălin</span>, a cybersecurity student specializing in red teaming and penetration testing. I work on Hack The Box, TryHackMe, and LetsDefend, focusing on Linux, Windows, web apps, APIs, and Active Directory.</p>
-              <p>With a deep understanding of attack vectors and security protocols, I participate regularly in CTF competitions and bug bounty programs to sharpen my skills and contribute to a safer digital environment.</p>
+              <h3>Hello, I'm <span class="highlight">Petre Radu Cătălin</span><br></h3>
+              <p>
+                I'm a passionate cybersecurity student specializing in <span class="highlight">red teaming</span> and <span class="highlight">penetration testing</span>. 
+                My journey in cybersecurity began with a deep interest in how systems work and how they can be broken.
+              </p>
+              <p>
+                I actively participate in platforms like Hack The Box, TryHackMe, and LetsDefend, focusing on Linux, Windows, web applications, APIs, and Active Directory environments. 
+                My goal is to uncover vulnerabilities before malicious actors can exploit them.
+              </p>
+              <p>
+                I regularly compete in CTF challenges and contribute to <span class="highlight">bug bounty programs</span> to refine my skills and help secure digital ecosystems. 
+                I also enjoy researching new attack vectors and sharing knowledge through technical write-ups and research papers.
+              </p>
               <div class="cta-buttons">
                 <a href="#contact" class="btn btn-primary">Contact Me</a>
                 <a href="#projects" class="btn btn-secondary">View Projects</a>
+                <a href="https://drive.google.com/uc?export=download&id=1yrsTlubmXsIkYnYCoRZoeAAynJasmf64" download="Petre-Radu-Catalin-Resume.pdf" class="btn btn-primary">
+                  📄 Download CV 
+                </a>
               </div>
             </div>
+
             <div class="about-stats">
               <div class="stat-card">
                 <div class="stat-icon"><span class="icon-trophy"></span></div>
                 <div class="stat-number">5</div>
                 <div class="stat-label">CTF Competitions</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon"><span class="icon-star"></span></div>
+                <div class="stat-number">3</div>
+                <div class="stat-label">Hackathon Competitions</div>
               </div>
               <div class="stat-card">
                 <div class="stat-icon"><span class="icon-bug"></span></div>
@@ -124,6 +121,16 @@
                 <div class="stat-icon"><span class="icon-certificate"></span></div>
                 <div class="stat-number">25+</div>
                 <div class="stat-label">Certifications</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon"><span class="icon-web"></span></div>
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Penetration Tests</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon"><span class="icon-book"></span></div>
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Research Papers</div>
               </div>
             </div>
           </div>
@@ -136,77 +143,6 @@
             <h2 class="section-title">Skills</h2>
           </div>
           <div class="skills-content">
-            <div class="skill-category">
-              <h3 class="category-title">Penetration Testing</h3>
-              <div class="skill-bars">
-                <div class="skill-item">
-                  <div class="skill-info">
-                    <span class="skill-name">Network Penetration</span>
-                    <span class="skill-percentage">90%</span>
-                  </div>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 90%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-info">
-                    <span class="skill-name">Web Application Testing</span>
-                    <span class="skill-percentage">85%</span>
-                  </div>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 85%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-info">
-                    <span class="skill-name">Mobile Application Testing</span>
-                    <span class="skill-percentage">75%</span>
-                  </div>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 75%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="skill-category">
-              <h3 class="category-title">Tools & Technologies</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">Metasploit</span>
-                <span class="skill-tag">Burp Suite</span>
-                <span class="skill-tag">Wireshark</span>
-                <span class="skill-tag">Nmap</span>
-                <span class="skill-tag">OWASP ZAP</span>
-                <span class="skill-tag">Kali Linux</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Bash</span>
-                <span class="skill-tag">Docker</span>
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">Aircrack-ng</span>
-                <span class="skill-tag">Netcat</span>
-                <span class="skill-tag">Hydra</span>
-                <span class="skill-tag">Cobalt Strike</span>
-                <span class="skill-tag">BloodHound</span>
-                <span class="skill-tag">Responder</span>
-                <span class="skill-tag">Tcpdump</span>
-                <span class="skill-tag">Social Engineering Toolkit (SET)</span>
-                <span class="skill-tag">Nikto</span>
-                <span class="skill-tag">Gobuster</span>
-                <span class="skill-tag">SSL Labs</span>
-                <span class="skill-tag">Responder</span>
-                <span class="skill-tag">Volatility</span>
-                <span class="skill-tag">Impacket</span>
-                <span class="skill-tag">Hashcat</span>
-                <span class="skill-tag">John the Ripper</span>
-                <span class="skill-tag">Shodan</span>
-                <span class="skill-tag">Nessus</span>
-                <span class="skill-tag">SQLmap</span>
-                <span class="skill-tag">Snort</span>
-                <span class="skill-tag">Suricata</span>
-                <span class="skill-tag">TShark</span>
-              </div>
-            </div>
-            
             <div class="skill-category">
               <h3 class="category-title">Areas of Expertise</h3>
               <div class="expertise-grid">
@@ -232,6 +168,17 @@
                 </div>
               </div>
             </div>
+            <div class="skill-category">
+              <h3 class="category-title">Performace Graph</h3>
+              <canvas id="ctfDoughnutChart" height="200"></canvas>
+              <canvas id="vulnBarChart" height="200"></canvas>
+            </div>
+            
+            <div class="skill-category">
+              <h3 class="category-title">Tools & Technologies</h3>
+              <div class="skill-tags" id="dynamic-skill-tags"></div>
+            </div>
+            
           </div>
         </div>
       </section>
@@ -287,7 +234,7 @@
               </div>
               </div>
             </div>
-            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -310,6 +257,9 @@
     <script type="module" src="./js/animations.js"></script>
     <script type="module" src="./js/projects.js"></script>
     <script type="module" src="./js/navigation.js"></script>
+    <script type="module" src="./js/chart.js"></script>
+    <script type="module" src="./js/skills.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>
