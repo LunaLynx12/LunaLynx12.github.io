@@ -53,12 +53,12 @@
           <div class="hero-content">
             <div class="terminal">
               <div class="terminal-header">
+                <div class="terminal-title">terminal ~ cybersec</div>
                 <div class="terminal-buttons">
                   <span class="terminal-button close"></span>
                   <span class="terminal-button minimize"></span>
                   <span class="terminal-button maximize"></span>
                 </div>
-                <div class="terminal-title">terminal ~ cybersec</div>
               </div>
               <div class="terminal-body">
                 <!-- Terminal output will be dynamically populated by terminal.js -->
@@ -170,8 +170,13 @@
             </div>
             <div class="skill-category">
               <h3 class="category-title">Performace Graph</h3>
-              <canvas id="ctfDoughnutChart" height="200"></canvas>
-              <canvas id="vulnBarChart" height="200"></canvas>
+              <div class="graph-container">
+              <div class="graph-left">
+                <canvas id="ctfDoughnutChart" height="200"></canvas>
+              </div>
+              <div class="graph-right">
+                <canvas id="vulnBarChart" height="500"></canvas>
+              </div>  
             </div>
             
             <div class="skill-category">
