@@ -63,6 +63,7 @@ const ctfDoughnutChart = new Chart(ctx, {
             padding: {
                 left: 180,
                 right: 180,
+                bottom: 150
             }
         },
         plugins: {

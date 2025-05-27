@@ -256,6 +256,8 @@
   flex-wrap: wrap; /* Ensures responsiveness */
   max-width: 100%;
   margin: 0 auto;
+  height: 350px; /* Fixed height */
+  padding-bottom: 450px;
 }
 
 .graph-left,
@@ -265,7 +267,7 @@
 
 canvas {
   width: 99% !important;
-  height: auto !important;
+  height: 99% !important;
 }
 
 .category-title {
