@@ -133,8 +133,8 @@ window.addEventListener('scroll', () => {
   }
   
   // Parallax for particles
-  const particles = document.getElementById('particles-js');
-  if (particles) {
-    particles.style.transform = `translateY(${scrollTop * 0.2}px)`;
-  }
+  //const particles = document.getElementById('particles-js');
+  //if (particles) {
+  //  particles.style.transform = `translateY(${scrollTop * 0.2}px)`;
+  //}
 });
