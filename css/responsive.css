@@ -31,6 +31,23 @@
   .expertise-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .graph-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .graph-left,
+  .graph-right {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .graph-left canvas,
+  .graph-right canvas {
+    height: auto !important;
+    width: 100% !important;
+  }
 }
 
 /* Mobile */
@@ -143,6 +160,24 @@
 
   .footer-social {
     justify-content: center;
+  }
+
+  .graph-container {
+    flex-direction: column !important;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .graph-left,
+  .graph-right {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .graph-left canvas,
+  .graph-right canvas {
+    width: 100% !important;
+    height: auto !important;
   }
 }
 
